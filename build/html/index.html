@@ -1,0 +1,269 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Strongsteam QuickStart Guide &mdash; StrongsteamQuickStart 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/strongsteam.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="StrongsteamQuickStart 0.0.1 documentation" href="#" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="#">StrongsteamQuickStart 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="strongsteam-quickstart-guide">
+<h1>Strongsteam QuickStart Guide<a class="headerlink" href="#strongsteam-quickstart-guide" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to the <a class="reference external" href="http://strongsteam.com">Strongsteam</a> documentation !</p>
+<p><a class="reference external" href="http://strongsteam.com">Strongsteam</a> is a is an AppStore of artificial intelligence and
+data mining APIs to let you pull interesting information
+out of images, video and audio.</p>
+<p><a class="reference external" href="http://strongsteam.com">Strongsteam</a> is a cross-platform toolbox for developpers
+who want to &#8220;give a pair of eyes&#8221; to computers, or mobile devices, to recognize
+images, words, semantic context, etc.</p>
+<p>All results sent from Strongsteam are <a class="reference external" href="http://json.org/">JSON</a>-based.
+They thus can be interfaced with any programming language with <a class="reference external" href="http://json.org/">JSON</a> support:</p>
+<ul class="simple">
+<li>C</li>
+<li>C++</li>
+<li>C#</li>
+<li>D</li>
+<li>Java</li>
+<li>Javascript</li>
+<li>Matlab</li>
+<li>Objective-C</li>
+<li>Perl</li>
+<li>PHP</li>
+<li>Python</li>
+<li>R</li>
+<li>Ruby</li>
+<li>and many more...</li>
+</ul>
+<div class="section" id="prerequisites-and-installation">
+<h2>Prerequisites and installation<a class="headerlink" href="#prerequisites-and-installation" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://strongsteam.com">Strongsteam</a> is a cloud-based API, which means you do not need to install a whole bunch of packages or softwares.
+Everything you need is hosted on our server, you just have to send us the data and we&#8217;ll take care of the rest !</p>
+<p>All you have to do is install the <tt class="docutils literal"><span class="pre">strongsteam</span></tt> python library.</p>
+<p>We strongly suggest to set up a virtual environnement using <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a>, in which only <tt class="docutils literal"><span class="pre">strongsteam</span></tt> and its dependancies will be installed.
+You can install <tt class="docutils literal"><span class="pre">virtualenv</span></tt> using the command</p>
+<div class="highlight-python"><pre>pip install virtualenv</pre>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><tt class="docutils literal"><span class="pre">virtualenv</span></tt> is a tool allowing you to create isolated python environnements. Read the <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">documentation</a> to learn more about it.</p>
+</div>
+<p>Now, you need to create a virtual environnement named for the project you are working on and tell it not to use the system site-packages but keep it’s own copy:</p>
+<div class="highlight-python"><pre>$ virtualenv --no-site-packages yourproject
+$ source yourproject/bin/activate</pre>
+</div>
+<p>You can install the <tt class="docutils literal"><span class="pre">strongsteam</span></tt> library in your virtual environnement with <a class="reference external" href="http://pypi.python.org/pypi/pip">pip</a>, with the command</p>
+<div class="highlight-python"><pre>pip install http://dl.dropbox.com/u/6113789/Strongsteam-client/strongsteam-0.0.1.tar.gz</pre>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For now, the module is privately hosted, but will be soon stored on PyPI.</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Do not install the modules using <tt class="docutils literal"><span class="pre">sudo</span></tt>: this will install them in your system python path and not in the virtual environnement.</p>
+</div>
+</div>
+<div class="section" id="first-test">
+<h2>First test<a class="headerlink" href="#first-test" title="Permalink to this headline">¶</a></h2>
+<p>To validate that the installation went well and that our server is running, you can run the <a class="reference external" href="_static/py/demo_hello_world.py">demo_hello_world.py</a> test script.</p>
+<p>You should see something like this in your shell :</p>
+<div class="highlight-python"><pre>$ python demo_hello_world.py
+Processing job on uri /user/kyran/processes/hello_world...
+{
+        u'status': u'succeeded',
+        u'time_stamps':
+        {
+                u'ts_job_ps_end': 1333542151.78501,
+                u'ts_job_ws_receive': 1333542025.628467,
+                u'ts_job_js_receive': 1333542151.619243,
+                u'ts_job_ps_start': 1333542151.783706,
+                u'ts_job_post': u'1333542150.91'
+        },
+        u'input_uri': None,
+        u'process_name': u'hello_world',
+        u'results':
+        {
+                u'hello_world_string': u'/user/kyran/vnd_ss_results/4f7c3d0711b3f4031f000000'
+        },
+        u'uri': u'/user/kyran/vnd_ss_results/4f7c3d0711b3f4031f000000',
+        u'job_uri': u'/user/kyran/jobs/4f7c3c89fa1d115c3500004b',
+        u'msg': u'Your job succeeded. Find the result-uris in results'
+}
+Job succeeded in 1.5700 seconds for /user/kyran/processes/hello_world
+Hello world ian!</pre>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Running this script can take more time (~30s) in the case where our server is asleep. Once awaken, everything will be blazing fast!</p>
+</div>
+</div>
+<div class="section" id="send-a-job-to-strongsteam">
+<h2>Send a job to Strongsteam<a class="headerlink" href="#send-a-job-to-strongsteam" title="Permalink to this headline">¶</a></h2>
+<p>You can send us a job with just a few lines of code!</p>
+<p>To understand how to do that, we&#8217;ll go trough the <a class="reference external" href="_static/py/demo_hello_world.py">demo_hello_world.py</a> test script:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">strongsteam.clients</span> <span class="kn">import</span> <span class="n">ss_client</span> <span class="k">as</span> <span class="n">ssc</span>
+<span class="kn">from</span> <span class="nn">strongsteam.clients.ss_client</span> <span class="kn">import</span> <span class="n">log</span>
+
+<span class="c"># set log to INFO if you want lots of progress information or</span>
+<span class="c"># use WARNING just to see the main client messages</span>
+<span class="n">log</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">ssc</span><span class="o">.</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
+
+<span class="n">BASE_URL</span> <span class="o">=</span> <span class="s">&#39;https://api-strongsteam.dyndns-ip.com&#39;</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+        <span class="n">cli</span> <span class="o">=</span> <span class="n">ssc</span><span class="o">.</span><span class="n">StrongSteam</span><span class="p">(</span><span class="n">BASE_URL</span><span class="p">)</span>
+
+        <span class="n">hello</span> <span class="o">=</span> <span class="n">cli</span><span class="o">.</span><span class="n">add_job</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="s">&#39;hello_world&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span><span class="s">&#39;oh, mighty Strongsteam user&#39;</span><span class="p">})</span>
+        <span class="k">print</span> <span class="n">hello</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="import-logging-and-api-url">
+<h2>Import, logging and API URL<a class="headerlink" href="#import-logging-and-api-url" title="Permalink to this headline">¶</a></h2>
+<p>You first need to import the <tt class="docutils literal"><span class="pre">ss_client</span></tt> class from the <tt class="docutils literal"><span class="pre">strongsteam.clients</span></tt> submodule, and setup a console logger.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">strongsteam.clients</span> <span class="kn">import</span> <span class="n">ss_client</span> <span class="k">as</span> <span class="n">ssc</span>
+<span class="kn">from</span> <span class="nn">strongsteam.clients.ss_client</span> <span class="kn">import</span> <span class="n">log</span>
+
+<span class="c"># set log to INFO if you want lots of progress information or</span>
+<span class="c"># use WARNING just to see the main client messages</span>
+<span class="n">log</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">ssc</span><span class="o">.</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">BASE_URL</span></tt> constant defines the URI with which the Strongsteam API can be used. You do not want to change that.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">BASE_URL</span> <span class="o">=</span> <span class="s">&#39;https://api-strongsteam.dyndns-ip.com&#39;</span> <span class="c"># The Strongsteam API URL</span>
+</pre></div>
+</div>
+<p>You then need to setup a <tt class="docutils literal"><span class="pre">StrongSteam</span></tt> client, using the <tt class="docutils literal"><span class="pre">BASE_URL</span></tt> constant:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">cli</span> <span class="o">=</span> <span class="n">ssc</span><span class="o">.</span><span class="n">StrongSteam</span><span class="p">(</span><span class="n">BASE_URL</span><span class="p">)</span> <span class="c"># Set up a Strongsteam client</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="send-a-job">
+<h2>Send a job<a class="headerlink" href="#send-a-job" title="Permalink to this headline">¶</a></h2>
+<p>Whenever you want to send us a job, just use the <tt class="docutils literal"><span class="pre">ss_client.StrongSteam.add_job()</span></tt> method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">hello</span> <span class="o">=</span> <span class="n">cli</span><span class="o">.</span><span class="n">add_job</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="s">&#39;hello_world&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span><span class="s">&#39;oh, mighty Strongsteam user&#39;</span><span class="p">})</span> <span class="c"># Add job of type &quot;Hello world&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Do not invoke the <tt class="docutils literal"><span class="pre">cli.add_job(*args)</span></tt> without storing the result into a variable. You use <tt class="docutils literal"><span class="pre">hello</span></tt>
+which is returned by <tt class="docutils literal"><span class="pre">add_job</span></tt> to query the status of the job and to extract results when the computation is finished.</p>
+</div>
+</div>
+<div class="section" id="the-jobs-we-support">
+<h2>The jobs we support<a class="headerlink" href="#the-jobs-we-support" title="Permalink to this headline">¶</a></h2>
+<p>Strongsteam being in alpha release, more jobs will be gradually added, as we mature.</p>
+<div class="section" id="ocr-optical-character-recognition">
+<h3>OCR (Optical Character Recognition)<a class="headerlink" href="#ocr-optical-character-recognition" title="Permalink to this headline">¶</a></h3>
+<p>If you want to extract text information from images, you can send us to Strongsteam using the following API call:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">BlahBlah</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="you-re-stuck-get-help">
+<h2>You&#8217;re stuck? Get help.<a class="headerlink" href="#you-re-stuck-get-help" title="Permalink to this headline">¶</a></h2>
+<p>If you have any questions regarding <a class="reference external" href="http://strongsteam.com">Strongsteam</a>, do not hesitate to send us an email at <a class="reference external" href="mailto:help&#37;&#52;&#48;strongsteam&#46;com">help<span>&#64;</span>strongsteam<span>&#46;</span>com</a>.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="#">
+              <img class="logo" src="_static/strongsteam_logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Strongsteam QuickStart Guide</a><ul>
+<li><a class="reference internal" href="#prerequisites-and-installation">Prerequisites and installation</a></li>
+<li><a class="reference internal" href="#first-test">First test</a></li>
+<li><a class="reference internal" href="#send-a-job-to-strongsteam">Send a job to Strongsteam</a></li>
+<li><a class="reference internal" href="#import-logging-and-api-url">Import, logging and API URL</a></li>
+<li><a class="reference internal" href="#send-a-job">Send a job</a></li>
+<li><a class="reference internal" href="#the-jobs-we-support">The jobs we support</a><ul>
+<li><a class="reference internal" href="#ocr-optical-character-recognition">OCR (Optical Character Recognition)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#you-re-stuck-get-help">You&#8217;re stuck? Get help.</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="#">StrongsteamQuickStart 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+ 	<div class="footer">
+        &copy; Copyright <a href="http://strongsteam.com">Strongsteam</a> 2012
+    </div>
+
+  </body>
+</html>
