@@ -100,8 +100,8 @@ html_theme = 'strongsteam'
 #html_theme_options = {}
 
 # Add any paths that contain custom themes here, relative to this directory.
-from os.path import abspath
-html_theme_path = [abspath('../Strongsteam-themes')]
+from os.path import relpath
+html_theme_path = [relpath('../Strongsteam-themes')]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
