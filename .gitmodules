@@ -1,6 +1,3 @@
-[submodule "tmp-sphinx-theme"]
-	path = tmp-sphinx-theme
-	url = git://github.com/BaltoRouberol/tmp-sphinx-theme.git
 [submodule "Strongsteam-themes"]
-	path = Strongsteam-themes
-	url = git@github.com:Kyrand/Strongsteam-themes.git
+path = Strongsteam-themes
+url = git://github.com/Kyrand/Strongsteam-themes.git
