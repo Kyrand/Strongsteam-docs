@@ -141,13 +141,23 @@ a:hover {
 /* -- body styles ----------------------------------------------------------- */
 
 div.body h1,
-div.body h2,
+div.body h2
+{
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: #e6e8da;
+    font-weight: normal;
+    color: #000000;
+    border-bottom: 1px solid #ccc;
+    margin: 20px -20px 10px -20px;
+    padding: 3px 0 3px 10px;
+}
+
 div.body h3,
 div.body h4,
 div.body h5,
-div.body h6 {
-    font-family: 'Trebuchet MS', sans-serif;
-    background-color: #e6e8da;
+div.body h6 
+{
+	font-family: 'Trebuchet MS', sans-serif;
     font-weight: normal;
     color: #000000;
     border-bottom: 1px solid #ccc;

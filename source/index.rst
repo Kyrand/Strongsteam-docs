@@ -35,23 +35,25 @@ They thus can be interfaced with any programming language with `JSON <http://jso
 
 Prerequisites and installation
 ------------------------------
-`Strongsteam <http://strongsteam.com>`_ is a cloud-based API, which means you do not need to install a whole bunch of packages or softwares.
-Everything you need is hosted on our server, you just have to send us the data and we'll take care of the rest !
+Requirements
+^^^^^^^^^^^^
+* `Python <http://www.python.org/>`_ 2.6, 2.7 or 3.2
+* `requests <http://docs.python-requests.org/en/latest/index.html>`_
+
+Install Strongsteam
+^^^^^^^^^^^^^^^^^^^
+`Strongsteam <http://strongsteam.com>`_ is a cloud-based API, which means you do not need to install a whole bunch of packages or software.
+Everything you need is hosted on our server: you just have to send us the data and we'll take care of the rest.
 
 All you have to do is install the ``strongsteam`` python library.
 
-We strongly suggest to set up a virtual environnement using `virtualenv <http://pypi.python.org/pypi/virtualenv>`_, in which only ``strongsteam`` and its dependancies will be installed.
-You can install ``virtualenv`` using the command ::
+We strongly suggest to install ``strongsteam`` in a virtual environnement, using `virtualenv <http://pypi.python.org/pypi/virtualenv>`_.
 
-	pip install virtualenv
+	$ virtualenv path/to/yourproject/
+	$ source yourproject/bin/activate
 	
 .. Note :: 
 	``virtualenv`` is a tool allowing you to create isolated python environnements. Read the `documentation <http://pypi.python.org/pypi/virtualenv>`_ to learn more about it.
-
-Now, you need to create a virtual environnement named for the project you are working on and tell it not to use the system site-packages but keep it’s own copy: ::
-	
-	$ virtualenv --no-site-packages yourproject
-	$ source yourproject/bin/activate
 
 You can install the ``strongsteam`` library in your virtual environnement with `pip <http://pypi.python.org/pypi/pip>`_, with the command ::
 
@@ -111,10 +113,8 @@ To understand how to do that, we'll go trough the `demo_hello_world.py <_static/
 	# use WARNING just to see the main client messages
 	log.setLevel(ssc.logging.WARNING)
 
-	BASE_URL = 'https://api-strongsteam.dyndns-ip.com'
-
 	if __name__ == "__main__":
-		cli = ssc.StrongSteam(BASE_URL)
+		cli = ssc.StrongSteam()
 
 		hello = cli.add_job(None, 'hello_world', data={'name':'oh, mighty Strongsteam user'})
 		print hello.get_data()
@@ -131,14 +131,9 @@ You first need to import the ``ss_client`` class from the ``strongsteam.clients`
 	# use WARNING just to see the main client messages
 	log.setLevel(ssc.logging.WARNING)
 
+You then need to setup a ``StrongSteam`` client: ::	
 
-The ``BASE_URL`` constant defines the URI with which the Strongsteam API can be used. You do not want to change that. ::
-
-	BASE_URL = 'https://api-strongsteam.dyndns-ip.com' # The Strongsteam API URL
-
-You then need to setup a ``StrongSteam`` client, using the ``BASE_URL`` constant: ::	
-
-	cli = ssc.StrongSteam(BASE_URL) # Set up a Strongsteam client 
+	cli = ssc.StrongSteam() # Set up a Strongsteam client 
 	
 	
 Send a job

@@ -35,23 +35,25 @@ They thus can be interfaced with any programming language with `JSON <http://jso
 
 Prerequisites and installation
 ------------------------------
-`Strongsteam <http://strongsteam.com>`_ is a cloud-based API, which means you do not need to install a whole bunch of packages or softwares.
-Everything you need is hosted on our server, you just have to send us the data and we'll take care of the rest !
+Requirements
+^^^^^^^^^^^^
+* `Python <http://www.python.org/>`_ 2.6, 2.7 or 3.2
+* `requests <http://docs.python-requests.org/en/latest/index.html>`_
+
+Install Strongsteam
+^^^^^^^^^^^^^^^^^^^
+`Strongsteam <http://strongsteam.com>`_ is a cloud-based API, which means you do not need to install a whole bunch of packages or software.
+Everything you need is hosted on our server: you just have to send us the data and we'll take care of the rest.
 
 All you have to do is install the ``strongsteam`` python library.
 
-We strongly suggest to set up a virtual environnement using `virtualenv <http://pypi.python.org/pypi/virtualenv>`_, in which only ``strongsteam`` and its dependancies will be installed.
-You can install ``virtualenv`` using the command ::
+We strongly suggest to install ``strongsteam`` in a virtual environnement, using `virtualenv <http://pypi.python.org/pypi/virtualenv>`_.
 
-	pip install virtualenv
+	$ virtualenv path/to/yourproject/
+	$ source yourproject/bin/activate
 	
 .. Note :: 
 	``virtualenv`` is a tool allowing you to create isolated python environnements. Read the `documentation <http://pypi.python.org/pypi/virtualenv>`_ to learn more about it.
-
-Now, you need to create a virtual environnement named for the project you are working on and tell it not to use the system site-packages but keep it’s own copy: ::
-	
-	$ virtualenv --no-site-packages yourproject
-	$ source yourproject/bin/activate
 
 You can install the ``strongsteam`` library in your virtual environnement with `pip <http://pypi.python.org/pypi/pip>`_, with the command ::
 

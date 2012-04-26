@@ -73,20 +73,25 @@ They thus can be interfaced with any programming language with <a class="referen
 </ul>
 <div class="section" id="prerequisites-and-installation">
 <h2>Prerequisites and installation<a class="headerlink" href="#prerequisites-and-installation" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://strongsteam.com">Strongsteam</a> is a cloud-based API, which means you do not need to install a whole bunch of packages or softwares.
-Everything you need is hosted on our server, you just have to send us the data and we&#8217;ll take care of the rest !</p>
-<p>All you have to do is install the <tt class="docutils literal"><span class="pre">strongsteam</span></tt> python library.</p>
-<p>We strongly suggest to set up a virtual environnement using <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a>, in which only <tt class="docutils literal"><span class="pre">strongsteam</span></tt> and its dependancies will be installed.
-You can install <tt class="docutils literal"><span class="pre">virtualenv</span></tt> using the command</p>
-<div class="highlight-python"><pre>pip install virtualenv</pre>
+<div class="section" id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://www.python.org/">Python</a> 2.6, 2.7 or 3.2</li>
+<li><a class="reference external" href="http://docs.python-requests.org/en/latest/index.html">requests</a></li>
+</ul>
 </div>
+<div class="section" id="install-strongsteam">
+<h3>Install Strongsteam<a class="headerlink" href="#install-strongsteam" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://strongsteam.com">Strongsteam</a> is a cloud-based API, which means you do not need to install a whole bunch of packages or software.
+Everything you need is hosted on our server: you just have to send us the data and we&#8217;ll take care of the rest.</p>
+<p>All you have to do is install the <tt class="docutils literal"><span class="pre">strongsteam</span></tt> python library.</p>
+<p>We strongly suggest to install <tt class="docutils literal"><span class="pre">strongsteam</span></tt> in a virtual environnement, using <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a>.</p>
+<blockquote>
+<div>$ virtualenv path/to/yourproject/
+$ source yourproject/bin/activate</div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><tt class="docutils literal"><span class="pre">virtualenv</span></tt> is a tool allowing you to create isolated python environnements. Read the <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">documentation</a> to learn more about it.</p>
-</div>
-<p>Now, you need to create a virtual environnement named for the project you are working on and tell it not to use the system site-packages but keep it’s own copy:</p>
-<div class="highlight-python"><pre>$ virtualenv --no-site-packages yourproject
-$ source yourproject/bin/activate</pre>
 </div>
 <p>You can install the <tt class="docutils literal"><span class="pre">strongsteam</span></tt> library in your virtual environnement with <a class="reference external" href="http://pypi.python.org/pypi/pip">pip</a>, with the command</p>
 <div class="highlight-python"><pre>pip install http://dl.dropbox.com/u/6113789/Strongsteam-client/strongsteam-0.0.1.tar.gz</pre>
@@ -98,6 +103,7 @@ $ source yourproject/bin/activate</pre>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p class="last">Do not install the modules using <tt class="docutils literal"><span class="pre">sudo</span></tt>: this will install them in your system python path and not in the virtual environnement.</p>
+</div>
 </div>
 </div>
 <div class="section" id="first-test">
@@ -216,7 +222,11 @@ which is returned by <tt class="docutils literal"><span class="pre">add_job</spa
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Strongsteam QuickStart Guide</a><ul>
-<li><a class="reference internal" href="#prerequisites-and-installation">Prerequisites and installation</a></li>
+<li><a class="reference internal" href="#prerequisites-and-installation">Prerequisites and installation</a><ul>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#install-strongsteam">Install Strongsteam</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#first-test">First test</a></li>
 <li><a class="reference internal" href="#send-a-job-to-strongsteam">Send a job to Strongsteam</a></li>
 <li><a class="reference internal" href="#import-logging-and-api-url">Import, logging and API URL</a></li>
