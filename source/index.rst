@@ -59,11 +59,11 @@ You can install the ``strongsteam`` library in your virtual environnement with `
 
 	pip install http://dl.dropbox.com/u/6113789/Strongsteam-client/strongsteam-0.0.1.tar.gz
 	
-.. Note ::
-	For now, the module is privately hosted, but will be soon stored on PyPI. 	
-
 .. Important ::
 	Do not install the modules using ``sudo``: this will install them in your system python path and not in the virtual environnement.
+
+.. Note ::
+	Some examples are installed along with the strongsteam package. They are located in ``lib/pythonX.X/site-packages/strongsteam/examples/`` if you installed ``strongsteam`` in a virtualenv. Otherwise, they are located in ``/lib/local/lib/pythonX.X/dist-packages/strongsteam/examples``.
 
 First test
 ----------
@@ -115,14 +115,14 @@ To understand how to do that, we'll go trough the `demo_hello_world.py <_static/
 
 	if __name__ == "__main__":
 		cli = ssc.StrongSteam()
-
 		hello = cli.add_job(None, 'hello_world', data={'name':'oh, mighty Strongsteam user'})
 		print hello.get_data()
 
 
-Import, logging and API URL
----------------------------
-You first need to import the ``ss_client`` class from the ``strongsteam.clients`` submodule, and setup a console logger. ::
+Set-up a logger
+^^^^^^^^^^^^^^^
+You first need to import the ``ss_client`` class from the ``strongsteam.clients`` submodule, 
+the ``log`` class from ``cc_client`` and set up a console logger. ::
 
 	from strongsteam.clients import ss_client as ssc
 	from strongsteam.clients.ss_client import log
@@ -133,18 +133,17 @@ You first need to import the ``ss_client`` class from the ``strongsteam.clients`
 
 You then need to setup a ``StrongSteam`` client: ::	
 
-	cli = ssc.StrongSteam() # Set up a Strongsteam client 
+	cli = ssc.StrongSteam()
 	
 	
 Send a job
-----------
-	
+^^^^^^^^^^
 Whenever you want to send us a job, just use the ``ss_client.StrongSteam.add_job()`` method: ::
 
 	hello = cli.add_job(None, 'hello_world', data={'name':'oh, mighty Strongsteam user'}) # Add job of type "Hello world" 
 	
 .. Note::
-	Do not invoke the ``cli.add_job(*args)`` without storing the result into a variable. You use ``hello`` 
+	Do not invoke the ``cli.add_job(*args)`` without storing the result in memory. You use ``hello`` 
 	which is returned by ``add_job`` to query the status of the job and to extract results when the computation is finished.
 	
 	
