@@ -7,12 +7,8 @@ Strongsteam QuickStart Guide
 ============================
 Welcome to the `Strongsteam <http://strongsteam.com>`_ documentation !
 
-`Strongsteam <http://strongsteam.com>`_ is a is an AppStore of artificial intelligence and
-data mining APIs to let you pull interesting information
-out of images, video and audio.
-
 `Strongsteam <http://strongsteam.com>`_ is a cross-platform toolbox for developpers 
-who want to "give a pair of eyes" to computers, or mobile devices, to recognize 
+who want to "give a pair of eyes" to computers or mobile devices, to recognize 
 images, words, semantic context, etc.
 
 All results sent from Strongsteam are `JSON <http://json.org/>`_-based. 
@@ -38,7 +34,8 @@ Prerequisites and installation
 Requirements
 ^^^^^^^^^^^^
 * `Python <http://www.python.org/>`_ 2.6, 2.7 or 3.2
-* `requests <http://docs.python-requests.org/en/latest/index.html>`_
+* `requests <http://docs.python-requests.org/en/latest/index.html>`_ 0.9.1
+* `progressbar <http://pypi.python.org/pypi/progressbar>`_ 2.3
 
 Install Strongsteam
 ^^^^^^^^^^^^^^^^^^^
@@ -47,7 +44,7 @@ Everything you need is hosted on our server: you just have to send us the data a
 
 All you have to do is install the ``strongsteam`` python library.
 
-We strongly suggest to install ``strongsteam`` in a virtual environnement, using `virtualenv <http://pypi.python.org/pypi/virtualenv>`_.
+We strongly suggest to install ``strongsteam`` in a virtual environnement, using `virtualenv <http://pypi.python.org/pypi/virtualenv>`_. ::
 
 	$ virtualenv path/to/yourproject/
 	$ source yourproject/bin/activate
