@@ -1,6 +1,6 @@
 # Strongsteam documentation sources
 This folder contains the Strongsteam documentation files, powered by Sphinx.
-A service hook links this repo to ReadTheDocs, which rebuild the docs at each new commit.
+A service hook links this repo to ReadTheDocs, which rebuilds the docs at each new commit.
 
 The official built docs can be seen at http://readthedocs.org/docs/strongsteam/en/latest/
 
